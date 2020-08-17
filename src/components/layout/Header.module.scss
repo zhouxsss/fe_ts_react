@@ -1,0 +1,62 @@
+@import '../_base.scss';
+
+.header {
+  width: 100%;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  font-size: 0.16rem;
+  background-color: $deep-blue;
+
+  &__cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    &-img {
+      margin-right: 0.1rem;
+      width: 0.4rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 0.21rem;
+      color: #ffffff;
+      font-weight: 400;
+      height: 0.36rem;
+      line-height: 0.36rem;
+    }
+  }
+
+  .func {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    cursor: pointer;
+
+    span {
+      margin-left: 0.1rem;
+    }
+  }
+
+  &.header-pd {
+    padding: 0 0.3rem;
+  }
+}
+
+.func-item {
+  display: flex !important;
+  justify-content: space-between;
+  width: 1.4rem;
+  font-size: 0.13rem;
+  color: #505659;
+  align-items: center;
+
+  img {
+    margin-right: 0.1rem;
+  }
+}

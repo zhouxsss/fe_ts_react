@@ -1,0 +1,18 @@
+@import "../../../components/base";
+
+.name {
+  margin-bottom: 24px;
+  line-height: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  color: $font-title;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+
+  button:not(:last-child) {
+    margin-right: 5px;
+  }
+}

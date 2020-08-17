@@ -1,0 +1,189 @@
+$main-width: 12rem;
+$header-height: 0.8rem;
+$banner-height: 6rem;
+$input-height: 0.4rem;
+$button-height: 0.4rem;
+$propBoxMinWidth: 1.6rem;
+$chartBoxHeight: 3.5rem;
+$min-width: 13.6rem;
+
+// color
+$deep-blue: #4254b2; //#$primary-color
+$light-blue: #1868dc;
+$light-black: #333333;
+$deep-grey: #666666;
+$light-grey: #999999;
+$error-bg: #fff1f0;
+$warn-bg: #fff6e5;
+$bgColor1: #4254b2;
+$bgColor2: #28394f;
+$bgColor3: #f4f4f4;
+$font-title: #2C2C2C;
+
+$bgColor4: #ffffff;
+
+$error-color: #ef5460;
+$low-color: #999999;
+$warn-color: #fea147;
+$wait-color: #3b88de;
+$success-color: #4cae51;
+$success-bg: #f0fff0;
+
+$border-radius-1: 0.04rem;
+
+@mixin stylelessUl {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+@mixin stylelessAnchor {
+  text-decoration: none;
+}
+
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+
+  * html & {
+    height: 1px;
+  }
+}
+
+@mixin main-content {
+  @include clearfix;
+  width: $main-width;
+  margin: 0 auto;
+}
+
+@mixin stylelessA {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@mixin fixedPosition($top, $left) {
+  position: fixed;
+  top: $top;
+  right: 0;
+  bottom: 0;
+  left: $left;
+}
+
+@mixin centerChildrenVertically {
+  display: flex;
+  align-items: center;
+}
+
+@mixin centerChildren {
+  @include centerChildrenVertically;
+  justify-content: center;
+}
+
+@mixin propBoxBasic {
+  background-color: #fff;
+  height: 1rem;
+  min-width: $propBoxMinWidth;
+  border-radius: 0.04rem;
+}
+
+@mixin minWidth {
+  min-width: $min-width;
+  overflow-x: auto;
+}
+
+@mixin wordBreak {
+  word-break: break-all;
+}
+
+@mixin baseFont {
+  font-size: 0.16rem;
+  color: #333333;
+}
+
+@mixin pageHeader {
+  margin-bottom: 0;
+  font-size: 0.16rem;
+  color: $deep-grey;
+}
+
+@mixin mainSection {
+  margin-top: 0.2rem;
+  padding: 0.3rem;
+  background: $bgColor4;
+  border-radius: $border-radius-1;
+}
+
+@mixin scrollBarStyle {
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 10px;
+  }
+}
+
+@mixin infoModalTitle {
+  color: #3f3f3f;
+  font-size: 0.18rem;
+  font-weight: 600;
+}
+
+@mixin breakLongText {
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+@mixin detailLayout {
+  ul li {
+    display: flex;
+    padding: 0.08rem 0;
+    color: #333;
+    font-size: 16px;
+    list-style: none;
+
+    span:first-child {
+      flex-shrink: 0;
+      width: 1.3rem;
+      color: #888;
+      opacity: 0.88;
+      text-align: right;
+    }
+
+    span:nth-child(2) {
+      flex: 1;
+      @include breakLongText;
+    }
+  }
+}
+
+@mixin detailModalStyle {
+  :global {
+    .anticon {
+      display: none;
+    }
+
+    .ant-modal-confirm-title {
+      @include infoModalTitle;
+    }
+
+    .ant-modal-confirm-body>.anticon+.ant-modal-confirm-title+.ant-modal-confirm-content {
+      margin-left: 0;
+    }
+  }
+
+  &-list {
+    padding: 0.1rem;
+    @include detailLayout;
+  }
+}
